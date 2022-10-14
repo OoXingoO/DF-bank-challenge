@@ -1,0 +1,27 @@
+{
+  "name": "bank-challenge",
+  "version": "1.0.0",
+  "description": "This challenge helps you practice your OO design skills.",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OoXingoO/bank-challenge.git"
+  },
+  "keywords": [],
+  "author": "Xing Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OoXingoO/bank-challenge/issues"
+  },
+  "homepage": "https://github.com/OoXingoO/bank-challenge#readme",
+  "devDependencies": {
+    "jasmine": "^4.4.0"
+  }
+}

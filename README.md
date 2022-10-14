@@ -1,5 +1,16 @@
-# Bank
+# Bank Challenge
 
+```
+        ____________________________________
+        |#######====================#######|
+        |#(10)     *UNITED KINGDOM   *(10)#|
+        |#**          /===\   ********  **#|
+        |*# {£}      | (") |             #*|
+        |#*  ******  | /v\ |    T E N    *#|
+        |#(10)        \===/           (10)#|
+        |##==========TEN POUND===========##|
+        ------------------------------------ 
+```
 This challenge helps you practice your OO design skills.
 
 You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
