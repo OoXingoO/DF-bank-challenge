@@ -49,7 +49,13 @@ As a user,
 I want to be able to extract money from my bank account,  
 So that I can make a withdrawal. 
 ```  
+| Objects     | Properties                    | Messages         | Output  |
+| ----------- | ----------------------------- | ---------------- | ------- |
+| bankAccount | balance@number                | getBalance()     | @number |
+|             | accountHistory@Array[@string] | withdrawtMoney() |         |
 
+1. Test that amount withdrawn is correctly deducted from bankAccount balance.
+---
 ```  
 As a user,  
 I want to be able to see my activities (amount & date),  

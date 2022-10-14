@@ -30,6 +30,16 @@ describe(`Bank Account tests`, () => {
 
     });
 
+    it(`should deduct from balance if withdrawal is made`, () => {
+        //Arrange
+        testAccount = new bankAccount(1000);
+        //Act
+        testAccount.withdrawMoney(500);
+        const actual = testAccount.getBalance();
+        //Assert
+        expect(actual).toBe(500);
+    });
+
     it(`each transactions are recorded into the account history`, () => {
         //Arrange
         //Act
