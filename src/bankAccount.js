@@ -15,16 +15,15 @@ export default class bankAccount {
     depositMoney(amount) {
         this.#balance += amount;
         this.#accountHistory.push(amount);
-    }
+    };
 
     withdrawMoney(amount) {
         this.#balance -= amount;
         this.#accountHistory.push(amount);
-    }
+    };
 
     getAccountHistory() {
         return this.#accountHistory;
-
-    }
+    };
 
 }
