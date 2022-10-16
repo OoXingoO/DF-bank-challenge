@@ -1,4 +1,4 @@
-export default class bankAccount {
+export default class BankAccount {
 
     #balance;
     #accountHistory;

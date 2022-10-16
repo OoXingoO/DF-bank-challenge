@@ -61,16 +61,15 @@ As a user,
 I want to be able to see my activities (amount & date),  
 So that I can keep track of all my transactions.  
 ```  
-| Objects      | Properties | Messages             | Output      |
-| ------------ | ---------- | -------------------- | ----------- |
-| transactions |            | getDate()            | @dateString |
-|              |            | getTransactionType() | @string     |
-|              |            | getAmount()          | @number     |
+| Objects      | Properties | Messages    | Output      |
+| ------------ | ---------- | ----------- | ----------- |
+| transactions |            | getDate()   | @dateString |
+|              |            | getCredit() | @number     |
+|              |            | getDebit()  | @number     |
 
 1. Test that transaction returns the date in the correct format.
-2. Test that when money is added, transaction type returns "credit".
-3. Test that when money is taken out, transaction type returns "debit".
-4. Test that amount of transaction conducted is correct.
+2. Test that when money is added, transaction returns correct credit value.
+3. Test that when money is taken out, transaction returns correct debit value.
 ---
 ```  
 As a user,  

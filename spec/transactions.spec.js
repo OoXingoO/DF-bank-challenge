@@ -1,45 +1,37 @@
-import transactions from "../src/transactions.js";
+import Transaction from "../src/transaction.js";
 
 describe(`Transaction tests`, () => {
-    let testTransactions;
+    let testTransaction;
 
     afterEach(() => {
-        testTransactions = undefined;
+        testTransaction = undefined;
     });
 
     it(`should show date of transaction`, () => {
         //Arrange
-        const testTransactions = new transactions(new Date("01/13/2012"), 2000);
+        const testTransaction = new Transaction(new Date("01/13/2012"), 2000);
         //Act
-        const actual = testTransactions.getDate();
+        const actual = testTransaction.getDate();
         //Assert
         expect(actual).toBe("13/01/2012");
     });
 
-    it(`should return credit if deposit is made`, () => {
+    it(`should return correct credit value`, () => {
         //Arrange
-        const testTransactions = new transactions(new Date("01/13/2012"), 2000)
+        const testTransaction = new Transaction(new Date("01/13/2012"), 2000, 0)
         //Act
-        const actual = testTransactions.getTransactionType();
+        const actual = testTransaction.getCredit();
         //Assert
-        expect(actual).toBe("credit")
+        expect(actual).toBe(2000)
     });
 
-    it(`should return debit if withdrawal is made`, () => {
+    it(`should return correct debit value`, () => {
         //Arrange
-        const testTransactions = new transactions(new Date("01/14/2012"), -500)
+        const testTransaction = new Transaction(new Date("01/14/2012"), 0, 500)
         //Act
-        const actual = testTransactions.getTransactionType();
+        const actual = testTransaction.getDebit();
         //Assert
-        expect(actual).toBe("debit");
+        expect(actual).toBe(500);
     });
 
-    it(`should show correct amount of transactions`, () => {
-        //Arrange
-        const testTransactions = new transactions(new Date("01/10/2013"), 1000, "credit")
-        //Act
-        const actual = testTransactions.getAmount();
-        //Assert
-        expect(actual).toBe(1000);
-    });
 })

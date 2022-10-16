@@ -1,10 +1,10 @@
-import bankAccount from "../src/bankAccount.js";
+import BankAccount from "../src/bankAccount.js";
 
 describe(`Bank Account tests`, () => {
     let testAccount;
 
     beforeEach(() => {
-        testAccount = new bankAccount();
+        testAccount = new BankAccount();
     });
 
     afterEach(() => {
@@ -32,7 +32,7 @@ describe(`Bank Account tests`, () => {
 
     it(`should deduct from balance if withdrawal is made`, () => {
         //Arrange
-        testAccount = new bankAccount(1000);
+        testAccount = new BankAccount(1000);
         //Act
         testAccount.withdrawMoney(500);
         const actual = testAccount.getBalance();
