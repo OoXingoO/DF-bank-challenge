@@ -76,3 +76,8 @@ As a user,
 I want to be able to printout my statement,
 So that I can show it to others.
 ```
+| Objects   | Properties | Messages         | Output  |
+| --------- | ---------- | ---------------- | ------- |
+| statement |            | printStatement() | @String |
+
+1. Test that with every transaction, the printStatement is correctly called.

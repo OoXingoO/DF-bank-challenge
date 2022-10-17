@@ -3,6 +3,7 @@ export default class Transaction {
     #date;
     #credit;
     #debit;
+    #cashBalance;
 
     constructor(date, credit, debit) {
         this.#date = date;
@@ -11,7 +12,7 @@ export default class Transaction {
     };
 
     getDate() {
-        return this.#date.toLocaleDateString()
+        return this.#date.toLocaleDateString(`en-GB`)
     };
 
     getCredit() {
@@ -21,5 +22,9 @@ export default class Transaction {
     getDebit() {
         return this.#debit;
     };
+
+    getCashBalance(balance) {
+        return this.#cashBalance = balance;
+    }
 
 }

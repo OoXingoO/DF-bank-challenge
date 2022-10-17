@@ -25,9 +25,8 @@ describe(`Bank Account tests`, () => {
         //Act
         testAccount.depositMoney(1000);
         const actual = testAccount.getBalance();
-        //Assert
+        // //Assert
         expect(actual).toBe(1000);
-
     });
 
     it(`should deduct from balance if withdrawal is made`, () => {
@@ -46,7 +45,7 @@ describe(`Bank Account tests`, () => {
         testAccount.depositMoney(500);
         testAccount.withdrawMoney(100);
         //Assert
-        expect(testAccount.getAccountHistory().length).toBe(2);
+        expect(testAccount.getTransactions().length).toBe(2);
     });
 
 })

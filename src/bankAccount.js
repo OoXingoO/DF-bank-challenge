@@ -1,29 +1,44 @@
 export default class BankAccount {
 
     #balance;
-    #accountHistory;
+    #transactions;
 
     constructor(balance = 0) {
         this.#balance = balance;
-        this.#accountHistory = [];
+        this.#transactions = [];
     };
 
     getBalance() {
         return this.#balance;
     };
 
-    depositMoney(amount) {
-        this.#balance += amount;
-        this.#accountHistory.push(amount);
+    depositMoney(transaction) {
+        this.#balance += transaction;
+        this.#transactions.push(transaction);
     };
 
-    withdrawMoney(amount) {
-        this.#balance -= amount;
-        this.#accountHistory.push(amount);
+    withdrawMoney(transaction) {
+        this.#balance -= transaction;
+        this.#transactions.push(transaction);
     };
 
-    getAccountHistory() {
-        return this.#accountHistory;
+    addTransactions(transaction) {
+        if (transaction.getCredit() > 0) {
+            this.#balance += transaction.getCredit();
+        } else {
+            this.#balance -= transaction.getDebit();
+        };
+
+        this.#transactions.push({
+            date: transaction.getDate(),
+            credit: transaction.getCredit(),
+            debit: transaction.getDebit(),
+            balance: transaction.getCashBalance(this.#balance)
+        });
+    };
+
+    getTransactions() {
+        return this.#transactions;
     };
 
 }

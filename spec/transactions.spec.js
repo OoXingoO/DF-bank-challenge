@@ -9,7 +9,7 @@ describe(`Transaction tests`, () => {
 
     it(`should show date of transaction`, () => {
         //Arrange
-        const testTransaction = new Transaction(new Date("01/13/2012"), 2000);
+        const testTransaction = new Transaction(new Date(2012, 0, 13), 2000, 0);
         //Act
         const actual = testTransaction.getDate();
         //Assert
@@ -18,7 +18,7 @@ describe(`Transaction tests`, () => {
 
     it(`should return correct credit value`, () => {
         //Arrange
-        const testTransaction = new Transaction(new Date("01/13/2012"), 2000, 0)
+        const testTransaction = new Transaction(new Date(2012, 0, 13), 2000, 0)
         //Act
         const actual = testTransaction.getCredit();
         //Assert
@@ -27,7 +27,7 @@ describe(`Transaction tests`, () => {
 
     it(`should return correct debit value`, () => {
         //Arrange
-        const testTransaction = new Transaction(new Date("01/14/2012"), 0, 500)
+        const testTransaction = new Transaction(new Date(2012, 0, 14), 0, 500)
         //Act
         const actual = testTransaction.getDebit();
         //Assert
