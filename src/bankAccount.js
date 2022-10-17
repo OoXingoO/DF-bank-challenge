@@ -12,14 +12,20 @@ export default class BankAccount {
         return this.#balance;
     };
 
-    depositMoney(transaction) {
-        this.#balance += transaction;
-        this.#transactions.push(transaction);
+    depositMoney(credit) {
+        if (credit <= 0) {
+            throw new Error('Please enter a valid amount')
+        }
+        this.#balance += credit;
+        this.#transactions.push(credit);
     };
 
-    withdrawMoney(transaction) {
-        this.#balance -= transaction;
-        this.#transactions.push(transaction);
+    withdrawMoney(debit) {
+        if (this.#balance < debit) {
+            throw new Error('Insufficient balance')
+        }
+        this.#balance -= debit;
+        this.#transactions.push(debit);
     };
 
     addTransactions(transaction) {

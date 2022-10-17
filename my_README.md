@@ -43,6 +43,7 @@ So that I can make a deposit.
 1. Test to see if default balance is set to 0.
 2. Test that each transaction is recorded in accountHistory.
 3. Test that amount deposited is correctly added to bankAccount balance.
+4. Test that if amount deposited is less or equal to 0, an error message will be returned.
 ---
 ```  
 As a user,  
@@ -55,6 +56,7 @@ So that I can make a withdrawal.
 |             | accountHistory@Array[@string] | withdrawtMoney() |         |
 
 1. Test that amount withdrawn is correctly deducted from bankAccount balance.
+2. Test that if amount withdrawn is less than current balance, an error message will be returned.
 ---
 ```  
 As a user,  
