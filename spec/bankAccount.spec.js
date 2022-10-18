@@ -52,7 +52,21 @@ describe(`Bank Account tests`, () => {
         testAccount = new BankAccount(800);
         //Assert
         expect(() => { testAccount.withdrawMoney(1000) }).toThrowError('Insufficient balance');
-    })
+    });
+
+    it(`should return correct value when addTransactions is called`, () => {
+        //Arrange
+        const mockTransactions = {
+            getDate: function () { return "13/01/2012" },
+            getCredit: function () { return 2000 },
+            getDebit: function () { return 0 },
+            getCashBalance: function () { return 0 }
+        };
+        //Act
+        testAccount.addTransactions(mockTransactions);
+        //Assert
+        expect(testAccount.getTransactions()[0].credit).toBe(2000);
+    });
 
     it(`each transactions are recorded into the account history`, () => {
         //Arrange

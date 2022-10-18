@@ -35,10 +35,10 @@ As a user,
 I want to be able to add money into my bank account,  
 So that I can make a deposit.
 ```   
-| Objects     | Properties                    | Messages       | Output  |
-| ----------- | ----------------------------- | -------------- | ------- |
-| bankAccount | balance@number                | getBalance()   | @number |
-|             | accountHistory@Array[@string] | depositMoney() |         |
+| Objects     | Properties                  | Messages       | Output  |
+| ----------- | --------------------------- | -------------- | ------- |
+| bankAccount | balance@number              | getBalance()   | @number |
+|             | transactions@Array[@string] | depositMoney() |         |
 
 1. Test to see if default balance is set to 0.
 2. Test that each transaction is recorded in accountHistory.
@@ -50,10 +50,10 @@ As a user,
 I want to be able to extract money from my bank account,  
 So that I can make a withdrawal. 
 ```  
-| Objects     | Properties                    | Messages         | Output  |
-| ----------- | ----------------------------- | ---------------- | ------- |
-| bankAccount | balance@number                | getBalance()     | @number |
-|             | accountHistory@Array[@string] | withdrawtMoney() |         |
+| Objects     | Properties                  | Messages         | Output  |
+| ----------- | --------------------------- | ---------------- | ------- |
+| bankAccount | balance@number              | getBalance()     | @number |
+|             | transactions@Array[@string] | withdrawtMoney() |         |
 
 1. Test that amount withdrawn is correctly deducted from bankAccount balance.
 2. Test that if amount withdrawn is less than current balance, an error message will be returned.
@@ -63,15 +63,17 @@ As a user,
 I want to be able to see my activities (amount & date),  
 So that I can keep track of all my transactions.  
 ```  
-| Objects      | Properties | Messages    | Output      |
-| ------------ | ---------- | ----------- | ----------- |
-| transactions |            | getDate()   | @dateString |
-|              |            | getCredit() | @number     |
-|              |            | getDebit()  | @number     |
+| Objects      | Properties                  | Messages          | Output      |
+| ------------ | --------------------------- | ----------------- | ----------- |
+| bankAccount  | transactions@Array[@string] | addTransactions() | @string     |
+| transactions |                             | getDate()         | @dateString |
+|              |                             | getCredit()       | @number     |
+|              |                             | getDebit()        | @number     |
 
 1. Test that transaction returns the date in the correct format.
 2. Test that when money is added, transaction returns correct credit value.
 3. Test that when money is taken out, transaction returns correct debit value.
+4. Test that correct value is added to transactions array list when addTransactions is called.
 ---
 ```  
 As a user,  
