@@ -1,5 +1,5 @@
-# Bank Challenge
-
+DF Bank Challenge
+=================
 ```
         ____________________________________
         |#######====================#######|
@@ -11,13 +11,11 @@
         |##==========TEN POUND===========##|
         ------------------------------------ 
 ```
-This challenge helps you practice your OO design skills.
+About the project
+-------
+Using object-oriented programming and test-driven development (creating user stories followed by testings and finally source code) to setup a bank account which is able to print given transactions in a specific format (see below).
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
-
-## Specification
-
-### Requirements
+### Task Requirements
 
 * You should be able to interact with your code via the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.
@@ -38,15 +36,29 @@ date       || credit  || debit  || balance
 13/01/2012 || 2000.00 ||        || 3000.00
 10/01/2012 || 1000.00 ||        || 1000.00
 ```
+### Getting started
+-------
+- `npm install` → installs project dependencies.
+- `npm test` → run the tests.
 
+#### Project approaches
+Check out [myREADME](https://github.com/OoXingoO/DF-bank-challenge/blob/main/my_README.md) for more details.
 
-#### Standard
-- [ ] Meets the spec
-- [ ] Developed test-first
-- [ ] Passes tests and code is linted
-- [ ] Encapsulates adding and storing Transactions in a class
-- [ ] Encapsulates Statement formatting in a class
-- [ ] Encapsulates Transaction data in a class
+Built with
+-------
+![javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Jasmine](https://img.shields.io/badge/jasmine-%238A4182.svg?style=for-the-badge&logo=jasmine&logoColor=white)
 
-#### Extended
-- [ ] See a coach!
+Self-review
+------
+#### What have I learnt
+- Using encapsulation in a class.
+- Using Jasmine framework for testing and exploring with different matchers.
+- Using getters & setters method to access private properties of a class.
+
+#### What could I do differently?
+- Could break down printStatement() function into smaller methods - *one for printing the header of the statement and another to print each row of the statement for example*
+- Could conduct more testings and make use of a more variety of Jasmine matchers.
+
+#### What additional.enhance features could I add to develop further?
+- Printing statement in different colours - *e.g. red for debit, green for credit*.
